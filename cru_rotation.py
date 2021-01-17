@@ -23,9 +23,21 @@ This program can be run with Python 2 or Python 3. Depending on your environment
 $ python2 cru_rotation.py --members_present 'Alyse' 'Amber' 'Gretchen' 'Kaydene' 'Alexis' 'Jessica' 'Monica' 'Adrian'
 $ python3 cru_rotation.py --members_present 'Alyse' 'Amber' 'Gretchen' 'Kaydene' 'Alexis' 'Jessica' 'Monica' 'Adrian'
 
-Example output:
+Example output for the command:
+$ python3 cru_rotation.py --members_present 'Alyse' 'Amber' 'Gretchen' 'Kaydene' 'Alexis' 'Jessica' 'Monica' 'Adrian'
 
+Presenter order: Jessica, Adrian, Gretchen, Monica, Alexis, Alyse, Amber, Kaydene
+Note taker order: Amber, Kaydene, Jessica, Adrian, Gretchen, Monica, Alexis, Alyse
+Time keeper order: Alyse, Amber, Kaydene, Jessica, Adrian, Gretchen, Monica, Alexis
 
+Presenter: 'Jessica'.  Note-taker: 'Amber'.  Time keeper: 'Alyse'.
+Presenter: 'Adrian'.  Note-taker: 'Kaydene'.  Time keeper: 'Amber'.
+Presenter: 'Gretchen'.  Note-taker: 'Jessica'.  Time keeper: 'Kaydene'.
+Presenter: 'Monica'.  Note-taker: 'Adrian'.  Time keeper: 'Jessica'.
+Presenter: 'Alexis'.  Note-taker: 'Gretchen'.  Time keeper: 'Adrian'.
+Presenter: 'Alyse'.  Note-taker: 'Monica'.  Time keeper: 'Gretchen'.
+Presenter: 'Amber'.  Note-taker: 'Alexis'.  Time keeper: 'Monica'.
+Presenter: 'Kaydene'.  Note-taker: 'Alyse'.  Time keeper: 'Alexis'.
 
 
 Alyse Dunn
@@ -57,8 +69,6 @@ def main(members_present):
     :param members_present: A list of the first names of Cru members who are present at the current meeting
     :return: None, but prints a list of presenters, notetakers, and timekeepers, in order
     """
-    presentation_tuples = []
-
     logging.debug("Cru members present this meeting: %s", (", ".join(members_present)))
 
     random.shuffle(members_present)
@@ -80,10 +90,6 @@ def main(members_present):
             "Presenter: '%s'.  Note-taker: '%s'.  Time keeper: '%s'.",
             presenter_order[i], note_taker_order[i], time_keeper_order[i]
         )
-    #     presentation_tuples.append(presentation_tuple)
-    #
-    # for presentation_tuple in presentation_tuples:
-    #     logging.info(", ".join(presentation_tuple))
 
 
 if __name__ == '__main__':
