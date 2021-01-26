@@ -2,23 +2,23 @@
 
 """
 This is a short program that I wrote to solve a problem that I encountered during my time in the professional women's
-organization. The Cru (https://www.thecru.com/). As a member of The Cru, you are assigned a 'Cru', which is a group of
-10 or fewer other women with whom you meet with on a regular (usually monthly) basis. During the meetings, each member
+organization 'The Cru' (https://www.thecru.com/). As a member of The Cru, you are assigned a 'Cru', which is a group of
+10 or fewer women with whom you meet on a regular (e.g. monthly, quarterly) basis. During the meetings, each member
 takes a few minutes to present on a problem that they'd like help with. While one participant presents, a different
 participant must take notes for the speaker, and a different participant must keep time for the speaker (so one speaker,
 one participant taking notes, one participant keeping time, and everyone else listening and providing feedback). Within
-our Cru, we were consistently wasting time at the beginning of each meeting trying to designate who would take notes
-for whom, and who would keep time for whom. So, I developed this short script that takes a list of Cru attendees as the
-input (because all member of the Cru might not attend each week), and creates assignments for who will takes notes for
+our Cru, we were consistently wasting time at the beginning of each meeting confirming who would take notes for whom,
+and who would keep time for whom. So, I created this short script that takes a list of Cru attendees as the
+input (because all members of your Cru might not attend each week), and creates assignments for who will takes notes for
 whom, and who will keep time for whom. Other criteria that this script takes into account:
  - The first person to present during a Cru meeting should be randomized, so that the same person doesn't end up going
-   first too often
+   first every week
  - Cru members who just presented should not have to immediately keep time or take notes right after their presentation,
    in order to give the presenter some time and space to digest their presentation feedback.
 
 
-This program can be run with Python 2 or Python 3. Depending on your environment setup, the program can be run with one
-(or both) of the following commands:
+This program can be run with Python 2 or Python 3. Depending on your environment setup, the program can be run with
+either of the following commands:
 
 $ python2 cru_rotation.py --members_present 'Alyse' 'Amber' 'Gretchen' 'Kaydene' 'Alexis' 'Jessica' 'Monica' 'Adrian'
 $ python3 cru_rotation.py --members_present 'Alyse' 'Amber' 'Gretchen' 'Kaydene' 'Alexis' 'Jessica' 'Monica' 'Adrian'
@@ -59,7 +59,7 @@ parser.add_argument(
     '--members_present',
     type=str,
     nargs='*',
-    help='A list of the first names of all Cru members present at the meeting.'
+    help='A list of space-separated first names of all Cru members present at the meeting.'
 )
 
 

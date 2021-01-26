@@ -18,6 +18,7 @@ alyse.dunn@gmail.com
 February 2021
 """
 
+
 def main():
     for i in range(1, 101):
         if i % 3 == 0:
