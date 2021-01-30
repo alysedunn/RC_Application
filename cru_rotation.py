@@ -81,6 +81,8 @@ def main(members_present):
     shuffled_members_deque = deque(members_present)
 
     note_taker_order = copy(shuffled_members_deque)
+    # This 'rotate' method pretty literally rotates all of the items in my list-like deque object the number of places
+    # that I specify. 
     note_taker_order.rotate(2)
     logging.info("Note taker order: %s", (", ".join(note_taker_order)))
 
