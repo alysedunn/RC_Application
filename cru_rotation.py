@@ -59,6 +59,7 @@ parser.add_argument(
     '--members_present',
     type=str,
     nargs='*',
+    required=True,
     help='A list of space-separated first names of all Cru members present at the meeting.'
 )
 
@@ -75,6 +76,8 @@ def main(members_present):
     presenter_order = members_present
     logging.info("\nPresenter order: %s", (", ".join(presenter_order)))
 
+    # Documentation on the deque method here: https://docs.python.org/3/library/collections.html#collections.deque.
+    # In short, it's just a way of creating a list-like object where I can then easily rotate items in the object.
     shuffled_members_deque = deque(members_present)
 
     note_taker_order = copy(shuffled_members_deque)
